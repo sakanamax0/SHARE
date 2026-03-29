@@ -1,0 +1,200 @@
+/* =========================
+   共通レイアウト
+========================= */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* =========================
+   認証画面ヘッダー
+========================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 40px;
+    background: #000;
+    color: #fff;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.nav a:hover {
+    opacity: 0.85;
+}
+
+/* =========================
+   投稿画面 左サイド
+========================= */
+.sidebar {
+    width: 355px;
+    padding: 22px 14px 40px;
+    border-right: 1px solid rgba(255, 255, 255, 0.85);
+    background: transparent;
+}
+
+.nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 26px;
+    padding: 0 0 0 8px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: fit-content;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    opacity: 0.9;
+}
+
+.nav-icon {
+    font-size: 32px;
+    line-height: 1;
+    width: 30px;
+    text-align: center;
+}
+
+/* シェア欄 */
+.share-box {
+    margin-top: 18px;
+    padding-right: 10px;
+}
+
+.share-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #ffffff;
+}
+
+.share-box textarea {
+    width: 100%;
+    height: 136px;
+    padding: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 14px;
+    resize: none;
+    outline: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.share-box textarea:focus {
+    border-color: #ffffff;
+}
+
+.share-box button {
+    display: block;
+    margin: 18px 0 0 auto;
+    width: 108px;
+    height: 42px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #7b2ff7 0%, #4c1dff 100%);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(123, 47, 247, 0.35);
+}
+
+.share-box button:hover {
+    opacity: 0.95;
+}
+
+/* メイン */
+.main {
+    flex: 1;
+    min-height: 100vh;
+    background: transparent;
+}
+
+/* モーダル */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal {
+    width: 100%;
+    max-width: 420px;
+    background: #0f1d2b;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+    padding: 28px 24px;
+    color: #ffffff;
+}
+
+.modal p {
+    margin: 0 0 24px;
+    font-size: 16px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.modal-buttons button {
+    min-width: 110px;
+    height: 42px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.modal-buttons .cancel {
+    background: transparent;
+    color: #ffffff;
+}
+
+.modal-buttons .danger {
+    background: linear-gradient(90deg, #7b2ff7 0%, #4c1dff 100%);
+    color: #ffffff;
+    border: none;
+}

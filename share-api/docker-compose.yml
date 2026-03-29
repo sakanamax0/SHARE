@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    container_name: share-api-app
+    working_dir: /var/www
+    volumes:
+      - ./src:/var/www
+    ports:
+      - "8000:8000"
+    tty: true

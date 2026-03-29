@@ -1,0 +1,65 @@
+/* =========================
+   認証ページ共通
+========================= */
+
+/* 背景 */
+.login-page,
+.register-page {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0f1c2e, #091421);
+    color: #fff;
+    position: relative;
+}
+
+/* カード共通 */
+.login-card,
+.register-card {
+    width: 380px;
+    background: #fff;
+    color: #000;
+    padding: 32px;
+    border-radius: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* タイトル */
+.login-card h2,
+.register-card h2 {
+    margin-bottom: 24px;
+    font-size: 20px;
+}
+
+/* 入力欄 */
+.login-card input,
+.register-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    font-size: 14px;
+    outline: none;
+}
+
+/* ボタン */
+.login-card button,
+.register-card button {
+    margin-top: 8px;
+    width: 140px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background: #5b2dd8;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-card button:hover,
+.register-card button:hover {
+    opacity: 0.9;
+}

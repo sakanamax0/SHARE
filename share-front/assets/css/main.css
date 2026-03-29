@@ -1,0 +1,60 @@
+/* 投稿全体 */
+.tweet {
+    display: flex;
+    padding: 16px;
+    border-bottom: 1px solid #2f3336;
+    cursor: pointer;
+}
+
+.tweet:hover {
+    background-color: #080808;
+}
+
+/* アイコン */
+.tweet-avatar {
+    margin-right: 12px;
+}
+
+.tweet-avatar img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+/* 本文エリア */
+.tweet-body {
+    flex: 1;
+}
+
+/* 名前行 */
+.tweet-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.tweet-header .name {
+    font-weight: bold;
+    color: #e7e9ea;
+}
+
+.tweet-header .id {
+    color: #71767b;
+    font-size: 14px;
+}
+
+/* 本文 */
+.tweet-text {
+    margin: 4px 0 8px;
+    line-height: 1.5;
+}
+
+/* アクション */
+.tweet-actions {
+    display: flex;
+    justify-content: space-between;
+    max-width: 260px;
+    color: #71767b;
+    font-size: 14px;
+}

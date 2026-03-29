@@ -1,0 +1,36 @@
+# =========================
+# Laravel (share-api)
+# =========================
+share-api/vendor/
+share-api/node_modules/
+share-api/.env
+share-api/.phpunit.result.cache
+share-api/public/hot
+share-api/public/storage
+share-api/storage/*.key
+share-api/storage/logs/
+share-api/storage/framework/cache/
+share-api/storage/framework/sessions/
+share-api/storage/framework/views/
+share-api/bootstrap/cache/*.php
+
+# SQLite DB
+# share-api/database/database.sqlite
+
+# =========================
+# Nuxt (share-front)
+# =========================
+share-front/node_modules/
+share-front/.nuxt/
+share-front/.output/
+share-front/dist/
+share-front/.env
+
+# =========================
+# Common
+# =========================
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
