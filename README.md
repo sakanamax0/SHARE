@@ -52,13 +52,10 @@ php artisan migrate
 
 #### 9. Laravel API動作確認
 
-ブラウザで以下にアクセスしてください。
 
 ```text
 http://127.0.0.1:8000
 ```
-
-Laravelの初期画面が表示されれば、バックエンドの起動は完了です。
 
 ---
 
@@ -77,9 +74,6 @@ docker compose up -d
 ```
 
 #### 初回セットアップ後の再起動時
-
-初回セットアップ完了後は、次回以降毎回 `composer install` や `php artisan key:generate` を実行する必要はありません。
-通常は以下のコマンドで起動できます。
 
 ```bash
 cd share-api
