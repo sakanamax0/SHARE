@@ -56,4 +56,26 @@ class PostController extends Controller
             ],
         ], 201);
     }
+
+    public function show($id)
+    {
+        $post = Post::with([
+            'user',
+            'comments.user'
+        ])
+            ->withCount('likes')
+            ->findOrFail($id);
+
+        return response()->json([
+            'id' => $post->id,
+            'user_id' => $post->user_id,
+            'content' => $post->content,
+            'created_at' => $post->created_at,
+            'updated_at' => $post->updated_at,
+            'user' => $post->user,
+            'comments' => $post->comments,
+            'likes_count' => $post->likes_count,
+        ]);
+    }
+    
 }

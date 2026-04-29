@@ -1,0 +1,192 @@
+/* ベース */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f1c2e;
+    color: #fff;
+}
+
+.layout {
+    display: flex;
+}
+
+/* サイドバー */
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background: #13233a;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.nav-item {
+    display: block;
+    margin-bottom: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logout-btn {
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 100%;
+    background: transparent;
+    border: 1px solid #888;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 投稿フォーム */
+.share-box textarea {
+    width: 100%;
+    height: 120px;
+    background: transparent;
+    border: 1px solid #aaa;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.share-box button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(90deg, #6a5cff, #a259ff);
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* メイン */
+.main {
+    flex: 1;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* 投稿 */
+.tweet {
+    border-bottom: 1px solid #444;
+    padding: 15px 0;
+}
+
+.parent-post {
+    border-bottom: 1px solid #555;
+    margin-bottom: 20px;
+}
+
+/* ★ここが完成図の要 */
+.tweet-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* 本文 */
+.text {
+    margin-top: 8px;
+    color: #ccc;
+}
+
+/* ハート */
+.like {
+    font-size: 22px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ×ボタン（丸） */
+.delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #ccc;
+    color: #000;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* コメントタイトル（線付き） */
+.comment-header {
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.comment-header::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #444;
+    transform: translateY(-50%);
+}
+
+.comment-header span {
+    position: relative;
+    background: #0f1c2e;
+    padding: 0 10px;
+}
+
+/* コメント */
+.comment-item {
+    border-bottom: 1px solid #444;
+    padding: 10px 0;
+}
+
+.comment-text {
+    margin-top: 5px;
+}
+
+/* コメント入力 */
+.comment-form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.comment-form input {
+    flex: 1;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #888;
+    background: transparent;
+    color: #fff;
+    padding: 0 15px;
+}
+
+.comment-form button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(90deg, #6a5cff, #a259ff);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ホバー */
+.like:hover,
+.delete:hover {
+    opacity: 0.7;
+}

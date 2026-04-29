@@ -1,71 +1,40 @@
 <template>
   <div class="tweet">
-    <div class="tweet-header">
+
+    <!-- 1行目 -->
+    <div class="tweet-top">
       <strong>{{ post.user }}</strong>
 
-      <div class="icons">
-        <span class="like" @click="toggleLike">
-          ♥ {{ post.likes_count || 0 }}
-        </span>
+      <!-- いいね -->
+      <span class="like" @click="toggleLike">
+        ♥ {{ post.likes_count || 0 }}
+      </span>
 
-        <span
-          v-if="currentUser && post.user_id === currentUser.id"
-          class="delete"
-          @click="$emit('request-delete', post)"
-        >
-          ✖
-        </span>
-      </div>
+      <!-- 削除（まずは必ず表示させる） -->
+      <span
+        class="delete"
+        @click="$emit('request-delete', post)"
+      >
+        ✖
+      </span>
+
+      <!-- 矢印 -->
+      <span class="arrow" @click="goDetail"></span>
     </div>
 
+    <!-- 本文 -->
     <div class="text">
       {{ post.content }}
     </div>
 
-    <div class="comment-section">
-      <div class="comment-title">コメント</div>
-
-      <div
-        v-for="comment in post.comments"
-        :key="comment.id"
-        class="comment-item"
-      >
-        <strong>{{ comment.user }}</strong>
-        <div class="comment-text">{{ comment.content }}</div>
-      </div>
-
-      <div class="comment-form">
-        <input
-          v-model="commentText"
-          type="text"
-          placeholder="コメントを入力"
-        />
-
-        <button @click="submitComment">
-          コメント
-        </button>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    post: {
-      type: Object,
-      required: true
-    },
-    currentUser: {
-      type: Object,
-      default: null
-    }
-  },
-
-  data() {
-    return {
-      commentText: ''
-    }
+    post: Object,
+    currentUser: Object
   },
 
   methods: {
@@ -73,15 +42,8 @@ export default {
       this.$emit('toggle-like', this.post.id)
     },
 
-    submitComment() {
-      if (!this.commentText.trim()) return
-
-      this.$emit('add-comment', {
-        postId: this.post.id,
-        content: this.commentText
-      })
-
-      this.commentText = ''
+    goDetail() {
+      this.$router.push(`/posts/${this.post.id}`)
     }
   }
 }

@@ -37,7 +37,6 @@
           :post="post"
           :current-user="currentUser"
           @request-delete="openDeleteModal"
-          @add-comment="addComment"
           @toggle-like="toggleLike"
         />
 
@@ -86,6 +85,17 @@ export default {
     }
   },
 
+  head() {
+    return {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: '/css/index.css'
+        }
+      ]
+    }
+  },
+
   async mounted() {
     const user = localStorage.getItem('user')
 
@@ -105,13 +115,7 @@ export default {
         this.posts = data.map(post => ({
           ...post,
           user: post.user ? post.user.name : '不明',
-          likes_count: post.likes_count || 0,
-          comments: post.comments
-            ? post.comments.map(comment => ({
-                ...comment,
-                user: comment.user ? comment.user.name : '不明'
-              }))
-            : []
+          likes_count: post.likes_count || 0
         }))
       } catch (error) {
         console.error(error)
@@ -145,58 +149,10 @@ export default {
         this.posts.unshift({
           ...data.post,
           user: data.post.user ? data.post.user.name : '不明',
-          likes_count: data.post.likes_count || 0,
-          comments: data.post.comments
-            ? data.post.comments.map(comment => ({
-                ...comment,
-                user: comment.user ? comment.user.name : '不明'
-              }))
-            : []
+          likes_count: data.post.likes_count || 0
         })
 
         this.newPost = ''
-      } catch (error) {
-        console.error(error)
-        alert('サーバーに接続できませんでした')
-      }
-    },
-
-    async addComment({ postId, content }) {
-      if (!content.trim()) return
-      if (!this.currentUser) return
-
-      try {
-        const response = await fetch('http://127.0.0.1:8000/api/comments', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            post_id: postId,
-            user_id: this.currentUser.id,
-            content: content
-          })
-        })
-
-        const data = await response.json()
-
-        if (!response.ok) {
-          alert(data.message || 'コメント投稿に失敗しました')
-          return
-        }
-
-        const targetPost = this.posts.find(post => post.id === postId)
-
-        if (targetPost) {
-          if (!targetPost.comments) {
-            targetPost.comments = []
-          }
-
-          targetPost.comments.push({
-            ...data.comment,
-            user: data.comment.user ? data.comment.user.name : '不明'
-          })
-        }
       } catch (error) {
         console.error(error)
         alert('サーバーに接続できませんでした')
