@@ -156,7 +156,7 @@ SHARE
 ### 1. リポジトリをclone
 
 ```bash
-git clone git@github.com:sakanamax0/SHARE.git
+git clone https://github.com/sakanamax0/SHARE.git
 ```
 
 ---
