@@ -3,16 +3,16 @@
 ## アプリ概要
 
 SHAREは、ユーザー登録・ログイン後に投稿、コメント、いいねができるSNS風アプリです。
-フロントエンドはNuxt.js、バックエンドはLaravel APIで構成。
+フロントエンドはNuxt.js、バックエンドはLaravel APIで構成されています。
 
 ---
 
 ## 作成した目的
 
-Laravel API と Nuxt.js を用いた SPA 構成の理解を深めるために作成。
+Laravel API と Nuxt.js を用いた SPA 構成の理解を深めるために作成しました。
 
 認証機能、投稿機能、コメント機能、いいね機能を実装し、
-フロントエンドとバックエンドを分離したアプリケーション開発を学習することを目的。
+フロントエンドとバックエンドを分離したアプリケーション開発を学習することを目的としています。
 
 ---
 
@@ -151,7 +151,7 @@ SHARE
 
 ---
 
-## 環境構築
+## 環境構築手順
 
 ### 1. リポジトリをclone
 
@@ -171,15 +171,7 @@ cd SHARE/share-api
 
 ---
 
-### 3. 環境変数ファイルを作成
-
-```bash
-cp src/.env.example src/.env
-```
-
----
-
-### 4. Dockerコンテナを起動
+### 3. Dockerコンテナを起動
 
 ```bash
 docker compose up -d --build
@@ -187,47 +179,25 @@ docker compose up -d --build
 
 ---
 
-### 5. Laravelコンテナへ入る
+### 4. Laravel環境構築
 
 ```bash
 docker compose exec app bash
-```
 
----
-
-### 6. Composer依存関係をインストール
-
-```bash
 composer install
-```
 
----
+cp src/.env.example src/.env
 
-### 7. アプリケーションキーを作成
-
-```bash
 php artisan key:generate
-```
 
----
-
-### 8. 設定キャッシュをクリア
-
-```bash
 php artisan config:clear
-```
 
----
-
-### 9. マイグレーション + Seeder 実行
-
-```bash
 php artisan migrate:fresh --seed
 ```
 
 ---
 
-### 10. Laravel API 動作確認
+### 5. Laravel API 動作確認
 
 ```text
 http://localhost:8000
@@ -237,15 +207,15 @@ http://localhost:8000
 
 # Nuxt.js（フロントエンド）
 
-### 11. 別ターミナルで share-front へ移動
+### 6. share-frontへ移動
 
 ```bash
-cd SHARE/share-front
+cd ../share-front
 ```
 
 ---
 
-### 12. Nuxt.js 起動
+### 7. Nuxt.js 起動
 
 ```bash
 docker compose up -d
@@ -261,7 +231,7 @@ npm run dev
 
 ---
 
-### 13. フロント確認
+### 8. フロント確認
 
 ```text
 http://localhost:3000
@@ -335,4 +305,3 @@ chmod -R 777 storage bootstrap/cache
 php artisan migrate:fresh --seed
 ```
 
----
