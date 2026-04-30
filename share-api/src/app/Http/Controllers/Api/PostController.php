@@ -77,5 +77,21 @@ class PostController extends Controller
             'likes_count' => $post->likes_count,
         ]);
     }
-    
+
+    public function destroy($id)
+    {
+        $post = Post::find($id);
+
+        if (!$post) {
+            return response()->json([
+                'message' => '投稿が見つかりません'
+            ], 404);
+        }
+
+        $post->delete();
+
+        return response()->json([
+            'message' => '投稿を削除しました'
+        ], 200);
+    }
 }

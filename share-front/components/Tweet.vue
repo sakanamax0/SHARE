@@ -1,7 +1,7 @@
 <template>
   <div class="tweet">
 
-    <!-- 1行目 -->
+    
     <div class="tweet-top">
       <strong>{{ post.user }}</strong>
 
@@ -10,7 +10,7 @@
         ♥ {{ post.likes_count || 0 }}
       </span>
 
-      <!-- 削除（まずは必ず表示させる） -->
+      <!-- 削除 -->
       <span
         class="delete"
         @click="$emit('request-delete', post)"

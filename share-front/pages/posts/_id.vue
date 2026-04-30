@@ -25,10 +25,10 @@
     <main class="main">
       <div class="page-title">コメント</div>
 
-      <!-- 親投稿 -->
+      
       <div class="tweet parent-post">
 
-        <!-- ★ここが重要（横並び） -->
+        
         <div class="tweet-top">
           <strong>{{ post.user }}</strong>
 
@@ -49,12 +49,12 @@
         </div>
       </div>
 
-      <!-- コメントタイトル（線付き） -->
+      
       <div class="comment-header">
         <span>コメント</span>
       </div>
 
-      <!-- コメント一覧 -->
+      
       <div
         v-for="comment in post.comments"
         :key="comment.id"
@@ -66,7 +66,7 @@
         </div>
       </div>
 
-      <!-- コメント入力 -->
+      
       <div class="comment-form">
         <input
           v-model="commentText"

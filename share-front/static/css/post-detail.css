@@ -88,7 +88,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* ★ここが完成図の要 */
+
 .tweet-top {
     display: flex;
     align-items: center;
@@ -124,7 +124,7 @@ body {
     cursor: pointer;
 }
 
-/* コメントタイトル（線付き） */
+/* コメントタイトル */
 .comment-header {
     position: relative;
     text-align: center;
